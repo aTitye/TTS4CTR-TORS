@@ -1,0 +1,13 @@
+name: tts4ctr-tors
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch>=2.0
+  - numpy>=1.24,<3
+  - pandas>=2.0
+  - scikit-learn>=1.3
+  - pip
+  - pip:
+      - pytest>=8

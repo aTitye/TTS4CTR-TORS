@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+outputs/
+results/
+logs/
+
+# Local datasets and generated artifacts
+data/*/
+!data/*.py
+*.tfrecord
+*.pt
+*.pth
+*.npy
+*.npz
+*.pkl
+*.log
+*.out
+*.err
+
+# Local release audit helper
+/scripts/audit_public_repo.py
