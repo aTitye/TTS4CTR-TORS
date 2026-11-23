@@ -1,5 +1,11 @@
 # TTS4CTR-TORS: Conditional Test-time Scaling Framework
 
+This repository accompanies the TORS journal extension of the SIGIR 2026 paper
+"Exploring Test-time Scaling via Prediction Merging on Large-Scale Recommendation".
+It is distinct from the conference-version repository at
+https://github.com/aTitye/TTS4CTR; materials introduced in the journal extension
+are organized in this repository.
+
 This repository contains the public framework for the TORS journal extension:
 
 - **Prediction averaging**: conditions, classic CTR baselines, and prediction-bank analysis.
