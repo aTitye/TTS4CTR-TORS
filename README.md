@@ -16,6 +16,22 @@ This repository contains the public framework for the TORS journal extension:
 | Data | TensorFlow-based TFRecord converter and dependency-free reader (reader-only parser, no writer) | Raw or processed datasets |
 | Outputs | User-selected output directory | Experiment artifacts |
 
+## Findings from public benchmarks
+
+Experiments on Avazu, Criteo, and KDD12 cover eight CTR backbones.
+
+- Prediction merging generally improves single-model AUC and LogLoss. Gains arrive early and taper as member count grows; it often compares favorably with parameter scaling at similar plotted FLOPs.
+
+  ![Wukong prediction-merging and parameter-scaling curves on three public datasets](figures/scaling_wukong.png)
+
+- Diversity alone is not enough. On Avazu, Wukong+RankMixer improves over Wukong pairs, while Wukong+FinalMLP has greater prediction diversity but lower aggregate quality than Wukong pairs.
+
+  ![Relationship between prediction diversity, class separation, and AUC](figures/quality_complementarity.png)
+
+- Averaging checkpoints from independent initializations can damage predictions. Averaging checkpoints within each trajectory, then merging predictions across trajectories, retained the reported nine-snapshot ensemble quality using three rather than nine forward passes in all six tested dataset/backbone settings.
+
+  ![Prediction merging and parameter merging across a three-checkpoint simplex](figures/trajectory_merge_simplex.png)
+
 ## Install
 
 ```bash
